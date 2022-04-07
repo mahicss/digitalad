@@ -29,8 +29,9 @@
 							
 									Email.send({
 									
-											SecureToken : "c0b1a2af-9540-4676-8681-ad86483b41f7",
-											To : "colorballs99@gmail.com",
+											SecureToken : "48d67616-f4fc-453b-a255-7fc6059ace54",
+											
+											To : "tutorgopi@gmail.com",
 											From : document.getElementById("email").value,
 											Subject : document.getElementById("subject").value,
 											Body : "Name: " + document.getElementById("name").value + 
@@ -39,9 +40,7 @@
 													"<br> Message: " + document.getElementById("message").value 
 											}).then(
 												message => alert("Message sent Succesfully")
-											).catch( err => {
-        alert(err)
-    });
+											);
 					
 							}
 	</script>
@@ -275,13 +274,13 @@
 				</div>
 				<div class="col-lg-6 col-12">
 					<div class="contact-form">
-						<form method="post" onsubmit="sendMail(event)" class="comment-form">
+						<form method="post" onsubmit="return false; reset();" class="comment-form">
 							<input type="text" id="name" name="name" class="" placeholder="Name*">
 							<input type="email" id="email" name="email" class="" placeholder="Email*">
 							<input type="text" id="subject" name="subject" class="" placeholder="Subject*">
 							<textarea name="text" id="message" cols="30" rows="10" placeholder="Message*"></textarea>
 							
-							<button type="submit" class="contact-btn">
+							<button type="submit" onclick="sendEmail()" class="contact-btn">
 								<span>Submit Now</span>
 							</button>
 						</form>
